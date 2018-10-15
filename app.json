@@ -1,0 +1,17 @@
+{
+  "apps": [
+    {
+      "name": "eos-viewer",
+      "script": "./server-pm2.js",
+      "env": {
+        "ENV_TYPE": "publish"
+      },
+      "instances": 1,
+      "exec_mode": "cluster",
+      "autorestart": true,
+      "error_file": "./logs/eos-viewer-err.log",
+      "out_file": "./logs/eos-viewer-out.log",
+      "log_date_format": "YYYY-MM-DD HH:mm Z"
+    }
+  ]
+}

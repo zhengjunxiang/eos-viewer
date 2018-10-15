@@ -1,0 +1,127 @@
+.home {
+  min-height: 600px;
+  .bg-black {
+    overflow: hidden;
+    .ivu-card-body {
+      padding: 0;
+      .ivu-col.hover {
+        .info-num a {
+          color: #fff;
+        }
+        .info-num a:hover,.info-num:hover {
+          cursor: pointer;
+          color: @light-hover !important;
+        }
+      }
+      .ivu-col.hover:hover {
+        background-color: @bgc-hover;
+      }
+    }
+    .info-num {
+      color: #fff !important;
+    }
+    background-color: @bgc;
+  }
+  .info-box {
+    font-weight: 500;
+    .info-text {
+      color: @info-text;
+    }
+    text-align: center;
+    .info-num {
+      font-size: 32px;
+      height: 36px;
+      line-height: 36px;
+      color: #333;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      margin-bottom: 10px;
+      .ivu-icon-logo-usd {
+        margin-bottom: 6px;
+      }
+    }
+    h3 {
+      font-size: 18px;
+      color: @info-text;
+    }
+    .conversion-box {
+      padding: 15px;
+      h3 {
+        line-height: 48px;
+        font-weight: 500;
+        text-align: left;
+        font-size: 24px;
+        color: #37334a;
+      }
+      .ivu-input-wrapper {
+        float: left;
+        width: 43%;
+        input {
+          text-align: center;
+        }
+      }
+      .ivu-icon {
+        padding: 0 5px;
+        float: left;
+        line-height: 36px;
+      }
+    }
+  }
+  .ivu-card-body {
+    .ivu-col {
+      padding: 24px 0;
+    }
+    padding: 24px;
+    .ivu-table-cell .ivu-tag {
+      line-height: 28px;
+      height: 28px;
+    }
+    .ivu-table-cell .ivu-tag.top {
+      border-color: #333;
+      .ivu-tag-text {
+        font-weight: bold;
+        color: #333;
+      }
+    }
+    .ivu-table-cell .ivu-tag.noTop {
+      .ivu-tag-text {
+        font-weight: bold;
+      }
+    }
+    .ivu-table-cell .ivu-tag.producing {
+      border-color: #02941e;
+      .ivu-tag-text {
+        font-weight: bold;
+        color: #02941e;
+      }
+    }
+    .head-block-producer {
+      background-color: #eae6fd !important;
+      td {
+        background-color: transparent !important;
+      }
+    }
+  }
+  .ivu-card {
+    margin-top: 16px;
+  }
+  .search-card {
+    h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      .ivu-icon {
+        margin-right: 6px;
+        font-size: 34px;
+        margin-top: -8px;
+      }
+    }
+    .ivu-input {
+      height: 48px;
+      font-size: 18px;
+    }
+  }
+  .ivu-card-head {
+    border-bottom: 0;
+  }
+}

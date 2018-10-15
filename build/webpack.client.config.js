@@ -6,7 +6,6 @@ const SWPrecachePlugin = require('sw-precache-webpack-plugin')
 const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const Category = require('../src/config/category');
 
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -73,8 +72,6 @@ const config = merge(base, {
 })
 
 if (process.env.NODE_ENV === 'production') {
-  const categories = Category.map(category => category.title).join('|');
-  const categoryUrlPattern = new RegExp('^/(' + categories + ')');
   config.plugins.push(
   // auto generate service worker
   new SWPrecachePlugin({
@@ -86,9 +83,6 @@ if (process.env.NODE_ENV === 'production') {
     runtimeCaching: [
       {
         urlPattern: '/',
-        handler: 'networkFirst'
-      }, {
-        urlPattern: categoryUrlPattern,
         handler: 'networkFirst'
       }
     ]

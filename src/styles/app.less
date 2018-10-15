@@ -1,0 +1,73 @@
+.account {
+  min-height: 600px;
+  .info-box-title {
+    font-size: 24px;
+    border-bottom: 1px solid #999;
+  }
+  .info-box {
+    font-weight: 500;
+    .info-text {
+      color: @info-text;
+    }
+    .info-num {
+      font-size: 16px;
+      height: 36px;
+      line-height: 36px;
+      color: #333;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+      .ivu-icon-logo-usd {
+        margin-bottom: 6px;
+      }
+    }
+  }
+
+  .token-box {
+    padding-top: 30px;
+    .token-item-box {
+      height: 35px;
+      overflow: hidden;
+      transition: height ease 0.2s;
+    }
+    .token-item-box.more {
+      height: auto;
+    }
+    .token-item {
+      overflow: auto;
+      float: left;
+      width: 200px;
+      margin-right: 20px;
+      line-height: 32px;
+      height: 32px;
+      margin-bottom: 30px;
+      .text {
+        white-space: nowrap;
+        width: 128px;
+        float: left;
+        font-size: 14px;
+        font-weight: 500;
+        padding-left: 10px;
+      }
+    }
+    .more-text {
+      .ivu-btn {
+        float: right;
+        font-size: 14px;
+      }
+      text-align: right;
+    }
+  }
+
+  .ivu-card-body {
+    padding: 24px;
+  }
+  .ivu-card {
+    margin-top: 16px;
+  }
+  .ivu-progress-bg {
+    background-color: @bgc;
+  }
+}

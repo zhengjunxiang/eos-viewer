@@ -1,9 +1,26 @@
-# 使用webpack4 配置vue2 ssr 环境
+# EOS Browser
 
-参考Demo:
+**使用webpack4 配置vue2 ssr 环境**
 
-[tiodot/vnews](https://github.com/tiodot/vnews)
+## Project setup
+```
+yarn install
+or
+npm install
+```
 
-> 个人只把webpack3更新到webpack4，并修改了对应配置
+### Compiles and hot-reloads for development
+```
+npm run dev
+```
 
-相关实现思路请看参考Demo.
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### pm2管理启动WEB server
+> 需要先安装pm2: yarn global add pm2 Or npm install -g pm2
+```
+npm run pm2
+```

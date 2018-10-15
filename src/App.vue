@@ -1,37 +1,33 @@
 <template>
-<div id="app">
-  <header class="header">
-    <nav class="inner">
-      <router-link to="/" exact>
-        <img class="logo" src="~public/logo-48.png" alt="logo">
-      </router-link>
-      <router-link v-for="category in categories" :to="category.path" :key="category.id">{{category.title}}</router-link>
-      <a class="github" href="https://github.com/tiodot/vnews" target="_blank" rel="noopener">
-        Built with Vue.js
-      </a>
-    </nav>
-  </header>
-  <transition name="fade" mode="out-in">
-    <router-view class="view"></router-view>
-  </transition>
-</div>
+  <div id="app">
+    <Header />
+    <div class="container" style="padding-top: 100px;">
+      <div class="container-inner">
+        <transition name="fade" mode="out-in">
+          <router-view />
+        </transition>
+      </div>
+      <BackTop />
+      <Spin fix v-show="isLoading" style="position: fixed;" size="large" />
+    </div>
+    <Footer />
+  </div>
 </template>
 <script>
-import Category from './config/category';
+import {mapGetters} from 'vuex'
+import Header from 'src/views/layout/header.vue'
+import Footer from 'src/views/layout/footer.vue'
 export default {
   name: 'app',
-  data() {
-    return {
-      categories: Category.map(category => ({
-        path: '/' + category.title,
-        title: category.name,
-        id: category.id
-      }))
-    }
+  components: { Header, Footer },
+  computed: {
+    ...mapGetters(['isLoading'])
   }
 }
 </script>
-
-<style lang="stylus">
-@import "./app.stylus";
+<style lang="less">
+@import './styles/variable.less';
+@import './styles/common.less';
+@import './styles/app.less';
+@import './styles/style-m.less';
 </style>

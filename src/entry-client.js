@@ -1,11 +1,8 @@
 import Vue from 'vue'
 import 'es6-promise/auto'
-import { createApp } from './app'
-import ProgressBar from './components/ProgressBar.vue'
-
-// global progress bar
-const bar = Vue.prototype.$bar = new Vue(ProgressBar).$mount()
-document.body.appendChild(bar.$el)
+import util from 'src/libs/util.js'
+import { createApp } from 'src/app'
+import iView from 'iview';
 
 // a global mixin that calls `asyncData` when a route component's params change
 Vue.mixin({
@@ -16,17 +13,29 @@ Vue.mixin({
         store: this.$store,
         route: to
       }).then(next).catch(next)
-    } else {
-      next()
-    }
+    } else next();
   }
 })
 
 const { app, router, store } = createApp()
 
+router.beforeEach((to, from, next) => {
+  window.$title = to.meta.title
+  iView.LoadingBar.start();
+  next()
+});
+
+router.afterEach((to) => {
+  iView.LoadingBar.finish();
+});
+
+window.vm = app;
+
 // prime the store with server-initialized state.
 // the state is determined during SSR and inlined in the page markup.
 if (window.__INITIAL_STATE__) {
+  window.__INITIAL_STATE__.app.apiHost = util.getApiHost();
+  window.__INITIAL_STATE__.app.lan = app.$i18n.locale = util.checkLan();
   store.replaceState(window.__INITIAL_STATE__)
 }
 
@@ -50,14 +59,11 @@ router.onReady(() => {
     }
 
     bar.start()
-    Promise.all(asyncDataHooks.map(hook => hook({ store, route: to })))
-      .then(() => {
-        bar.finish()
-        next()
-      })
-      .catch(next)
+    Promise.all(asyncDataHooks.map(hook => hook({ store, route: to }))).then(() => {
+      bar.finish()
+      next()
+    }).catch(next)
   })
-
   // actually mount to DOM
   app.$mount('#app')
 })

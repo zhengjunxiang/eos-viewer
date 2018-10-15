@@ -1,0 +1,189 @@
+body,html {
+  background-color: #ebedf0 !important;
+}
+
+li,ul {
+  list-style: none;
+}
+
+.padding0 {
+  padding: 0 !important;
+  .ivu-card-body {
+    padding: 0 !important;
+  }
+}
+
+a {
+  color: @link;
+}
+
+a.link {
+  color: @link;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: @link;
+}
+
+a.link:hover {
+  text-decoration: underline;
+  color: @link;
+}
+
+.container {
+  position: relative;
+  padding: 0 20px 30px;
+
+  &-inner {
+    max-width: 1280px;
+    min-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .ivu-page-item:hover a {
+    color: @main;
+  }
+
+  .ivu-page-item-active a,
+  .ivu-page-item-active:hover a {
+    color: @main;
+  }
+
+  .ivu-tabs-tab,
+  .ivu-tabs-tab-active {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 24px !important;
+    color: @main !important;
+  }
+
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.page-title {
+  word-wrap: break-word;
+  line-height: 20px;
+  padding: 20px 0;
+  font-size: 24px;
+}
+
+.content-box {
+  background: #fff;
+  padding: 30px;
+
+  .content-item {
+    border: 1px solid #fff;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  .content-item:hover {
+    border: 1px solid #ddd;
+  }
+}
+
+.table-box {
+  margin-top: 20px;
+  overflow: auto;
+}
+
+.ivu-table:after {
+  width: 0 !important;
+}
+
+.ivu-table-wrapper {
+  border-left: 0 !important;
+  min-width: 1100px !important;
+}
+
+// .ivu-table-body::-webkit-scrollbar { width: 0 !important }
+// .ivu-table-body { -ms-overflow-style: none; }
+// .ivu-table-body { overflow: -moz-scrollbars-none; }
+.ivu-table {
+  .ivu-table-header {
+    height: 48px !important;
+    th {
+      font-size: 14px;
+      height: 48px !important;
+      background-color: #fff;
+      .ivu-table-cell {
+        padding-left: 10px;
+      }
+    }
+    th:first-child .ivu-table-cell {
+      padding-left: 0;
+    }
+  }
+
+  .ivu-table-body {
+    font-size: 14px;
+    .ivu-table-cell {
+      padding: 10px !important;
+    }
+    td:first-child .ivu-table-cell {
+      padding-left: 0 !important;
+    }
+    .ivu-table-row-hover td {
+      background-color: #f1f1f1;
+    }
+  }
+}
+
+.page-box {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.ivu-btn-primary {
+  background-color: @main !important;
+  border-color: @main !important;
+}
+
+.router-link-active {
+  color: @main;
+}
+
+.card-title {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.ivu-card {
+  border-radius: 10px !important;
+}
+
+.ivu-input:focus {
+  border-color: @main !important;
+}
+.ivu-input:hover {
+  border-color: @main !important;
+}
+
+.ivu-tooltip-inner {
+  word-wrap: break-word;
+}
+
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ivu-modal-confirm-body {
+  word-wrap: break-word;
+  overflow: auto;
+}
+
+.ivu-card-body {
+  overflow: hidden;
+}
